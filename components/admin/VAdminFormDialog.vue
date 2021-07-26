@@ -1,4 +1,5 @@
 <script>
+import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
 import VueUtility from '@/library_vue/utility';
 
@@ -76,8 +77,8 @@ export default {
 			const isUpdate = this.innerValue.id ? true : false;
 			this.cleanup(correlationId, value, !isUpdate);
 			const response = isUpdate ?
-				await this.preCompleteSubmitUpdate(correlationId, this.$store.dispatcher, value) :
-				await this.preCompleteSubmitCreate(correlationId, this.$store.dispatcher, value);
+				await this.preCompleteSubmitUpdate(correlationId, GlobalUtility.$store.dispatcher, value) :
+				await this.preCompleteSubmitCreate(correlationId, GlobalUtility.$store.dispatcher, value);
 			this.logger.debug('VAdminFormDialog', 'preComplete', 'response', response, correlationId);
 			return response;
 		},

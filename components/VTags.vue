@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import base from './base';
+import base from '@/library_vue/components/base';
 
 export default {
 	extends: base,

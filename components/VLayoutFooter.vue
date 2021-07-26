@@ -23,9 +23,10 @@
 </template>
 
 <script>
+import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
 
-import base from './base';
+import base from '@/library_vue/components/base';
 import VVersion from './VVersion';
 
 export default {
@@ -46,8 +47,8 @@ export default {
 		}
 	},
 	async created() {
-		await this.$store.dispatcher.root.getVersion(this.correlationId());
-		this.version = this.$store.state.version;
+		await GlobalUtility.$store.dispatcher.root.getVersion(this.correlationId());
+		this.version = GlobalUtility.$store.state.version;
 	}
 };
 </script>
