@@ -4,4 +4,4 @@
 
 ### Installation
 
-[![NPM](https://nodei.co/npm/@thzero/library_client_vue_vuetify.png?compact=true)](https://npmjs.org/package/@thzero/library_client_vue_vuetify)
+Include as a submodule namned 'library_vue_vuetify' in the Vue application's source folder.
