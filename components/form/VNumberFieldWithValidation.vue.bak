@@ -10,6 +10,8 @@
 		<v-text-field
 			v-model="innerValue"
 			slot-scope="{ errors, valid }"
+			type="number"
+			:class="displayClass"
 			:error-messages="errors"
 			:readonly="readonly"
 			:success="valid"
@@ -23,7 +25,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'VtTextFieldWithValidation',
+	name: 'NumberFieldWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {
@@ -43,9 +45,18 @@ export default {
 			type: null,
 			default: null
 		},
+		negativeColor: {
+			type: Boolean,
+			default: false
+		},
 		readonly: {
 			type: Boolean,
 			default: false
+		}
+	},
+	computed: {
+		displayClass() {
+			return this.negativeColor ? (this.value < 0 ? 'text-negative' : null) : null;
 		}
 	},
 	watch: {

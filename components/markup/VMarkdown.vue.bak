@@ -13,7 +13,7 @@
 import baseMarkdown from '@/library_vue/components/markup/baseMarkdown';
 
 export default {
-	name: 'VtMarkdown',
+	name: 'Markdown',
 	extends: baseMarkdown
 };
 </script>

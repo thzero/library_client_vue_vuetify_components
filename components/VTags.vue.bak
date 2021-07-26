@@ -15,7 +15,6 @@
 import base from '@/library_vue/components/base';
 
 export default {
-	name: 'VtTags',
 	extends: base,
 	props: {
 		label: {

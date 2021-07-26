@@ -152,7 +152,7 @@
 import baseOpenSource from '@/library_vue/components/baseOpenSource';
 
 export default {
-	name: 'VtOpenSource',
+	name: 'BaseOpenSource',
 	extends: baseOpenSource
 };
 </script>

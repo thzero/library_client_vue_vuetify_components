@@ -41,7 +41,7 @@
 import baseDisplayDialog from '@/library_vue/components/baseDisplayDialog';
 
 export default {
-	name: 'VtDisplayDialog',
+	name: 'DisplayDialog',
 	extends: baseDisplayDialog
 };
 </script>

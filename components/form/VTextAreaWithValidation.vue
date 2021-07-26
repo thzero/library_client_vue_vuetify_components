@@ -24,7 +24,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'TextAreaWithValidation',
+	name: 'VtTextAreaWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {

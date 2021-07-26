@@ -7,13 +7,14 @@
 		:bail="rulesBail"
 		:immediate="true"
 	>
-		<v-text-field
+		<v-textarea
 			v-model="innerValue"
 			slot-scope="{ errors, valid }"
 			:error-messages="errors"
-			:readonly="readonly"
 			:success="valid"
 			v-bind="$attrs"
+			auto-grow
+			clearable
 			v-on="$listeners"
 		/>
 	</ValidationProvider>
@@ -23,7 +24,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'VtTextFieldWithValidation',
+	name: 'TextAreaWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {
@@ -42,10 +43,6 @@ export default {
 		value: {
 			type: null,
 			default: null
-		},
-		readonly: {
-			type: Boolean,
-			default: false
 		}
 	},
 	watch: {

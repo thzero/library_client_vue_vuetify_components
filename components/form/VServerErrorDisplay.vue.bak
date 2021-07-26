@@ -12,7 +12,7 @@
 
 <script>
 export default {
-	name: 'VSwitchWithValidation',
+	name: 'ServerErrorDisplay',
 	props: {
 		// must be included in props
 		value: {

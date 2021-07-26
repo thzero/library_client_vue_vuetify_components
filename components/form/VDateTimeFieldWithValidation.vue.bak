@@ -30,7 +30,7 @@ import VDateTimeField from './VDateTimeField';
 import base from '@/library_vue/components/base';
 
 export default {
-	name: 'VtDateTimePickerWithValidation',
+	name: 'DateTimePickerWithValidation',
 	components: {
 		VDateTimeField
 	},

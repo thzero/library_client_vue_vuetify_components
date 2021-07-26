@@ -89,7 +89,7 @@ import VConfirmationDialog from '../VConfirmationDialog';
 import DialogSupport from '@/library_vue/components/support/dialog';
 
 export default {
-	name: 'VtFormDialog',
+	name: 'FormDialog',
 	components: {
 		VConfirmationDialog
 	},

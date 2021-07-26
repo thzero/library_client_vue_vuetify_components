@@ -31,7 +31,7 @@
 import VueUtility from '@/library_vue/utility';
 
 export default {
-	name: 'VtLoadingOverlay',
+	name: 'LoadingOverlay',
 	props: {
 		signal: {
 			type: Boolean,
