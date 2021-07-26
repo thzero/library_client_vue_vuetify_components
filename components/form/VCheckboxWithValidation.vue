@@ -22,7 +22,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'CheckboxWithValidation',
+	name: 'VtCheckboxWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {

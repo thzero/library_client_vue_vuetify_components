@@ -23,7 +23,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'SelectAutoCompleteWithValidation',
+	name: 'VtSelectAutoCompleteWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {

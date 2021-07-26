@@ -25,7 +25,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'NumberFieldWithValidation',
+	name: 'VtNumberFieldWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {

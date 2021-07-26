@@ -51,7 +51,7 @@ import VueUtility from '@/library_vue/utility/index';
 import baseConfirmationDialog from '@/library_vue/components/baseConfirmationDialog';
 
 export default {
-	name: 'VtConfirmationDialog',
+	name: 'ConfirmationDialog',
 	extends: baseConfirmationDialog,
 	methods: {
 		handleError(response, correlationId) {

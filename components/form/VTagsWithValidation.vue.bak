@@ -29,7 +29,7 @@ import GlobalUtility from '@thzero/library_client/utility/global';
 import base from '@/library_vue/components/base';
 
 export default {
-	name: 'VtTagsWithValidation',
+	name: 'TagsWithValidation',
 	extends: base,
 	props: {
 		rules: {

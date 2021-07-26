@@ -27,7 +27,7 @@ import LibraryUtility from '@thzero/library_common/utility';
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'AutoCompleteWithValidation',
+	name: 'VtAutoCompleteWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {

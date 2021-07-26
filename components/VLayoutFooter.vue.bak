@@ -30,7 +30,7 @@ import base from '@/library_vue/components/base';
 import VVersion from './VVersion';
 
 export default {
-	name: 'VtLayoutFooter',
+	name: 'LayoutFooter',
 	components: {
 		VVersion
 	},

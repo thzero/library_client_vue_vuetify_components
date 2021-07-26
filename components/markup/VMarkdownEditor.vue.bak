@@ -31,7 +31,7 @@ import baseMarkdownEditor from '@/library_vue/components/markup/baseMarkdownEdit
 import VTextAreaWithValidation from '../form/VTextAreaWithValidation';
 
 export default {
-	name: 'VtMarkdownEditor',
+	name: 'MarkdownEditor',
 	components: {
 		VTextAreaWithValidation
 	},

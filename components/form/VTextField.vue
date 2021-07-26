@@ -11,7 +11,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'TextField',
+	name: 'VtTextField',
 	extends: baseControlEdit,
 	props: {
 		// must be included in props

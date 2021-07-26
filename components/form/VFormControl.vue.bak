@@ -59,7 +59,7 @@ import VueUtility from '@/library_vue/utility/index';
 import baseEdit from '@/library_vue/components/baseEdit';
 
 export default {
-	name: 'VtFormControl',
+	name: 'FormControl',
 	extends: baseEdit,
 	props: {
 		buttonCancel: {
