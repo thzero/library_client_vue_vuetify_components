@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
 
 import {} from '@thzero/library_common/utility/string';
@@ -62,7 +63,9 @@ async function start(app, router, storeRequest, vuetify, bootFiles, starter) {
 	}
 
 	Vue.prototype.$navRouter = router;
+	GlobalUtility.$navRouter = router;
 	Vue.prototype.$store = store;
+	GlobalUtility.$store = store;
 
 	const vueApp = {
 		el: '#app',

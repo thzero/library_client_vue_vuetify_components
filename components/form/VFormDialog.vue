@@ -83,10 +83,10 @@
 <script>
 import VueUtility from '@/library_vue/utility/index';
 
-import baseEdit from '../baseEdit';
+import baseEdit from '@/library_vue/components/baseEdit';
 import VConfirmationDialog from '../VConfirmationDialog';
 
-import DialogSupport from '../support/dialog';
+import DialogSupport from '@/library_vue/components/support/dialog';
 
 export default {
 	name: 'FormDialog',

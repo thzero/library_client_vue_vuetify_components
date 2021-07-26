@@ -56,7 +56,7 @@
 <script>
 import VueUtility from '@/library_vue/utility/index';
 
-import baseEdit from '../baseEdit';
+import baseEdit from '@/library_vue/components/baseEdit';
 
 export default {
 	name: 'FormControl',

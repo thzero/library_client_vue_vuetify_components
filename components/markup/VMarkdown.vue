@@ -10,30 +10,11 @@
 </template>
 
 <script>
-import Vue from 'vue';
-
-import LibraryConstants from '@thzero/library_client/constants';
-
-import base from '../base';
+import baseMarkdown from '@/library_vue/components/markup/baseMarkdown';
 
 export default {
 	name: 'Markdown',
-	extends: base,
-	props: {
-		value: {
-			type: String,
-			default: ''
-		}
-	},
-	computed: {
-		display() {
-			const correlationId = this.correlationId();
-			return this._serviceMarkup.trimResults(correlationId, this._serviceMarkup.render(correlationId, this.value));
-		}
-	},
-	created() {
-		this._serviceMarkup = Vue.prototype.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_MARKUP_PARSER);
-	}
+	extends: baseMarkdown
 };
 </script>
 

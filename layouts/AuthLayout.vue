@@ -25,9 +25,11 @@
 </template>
 
 <script>
-import baseLayout from './baseLayout';
+import GlobalUtility from '@thzero/library_client/utility/global';
 
-import VVersion from '../components/VVersion';
+import baseLayout from '@/library_vue/layouts/baseLayout';
+
+import VVersion from '@/library_vue_vuetify/components/VVersion';
 
 export default {
 	name: 'AuthLayout',
@@ -37,7 +39,7 @@ export default {
 	extends: baseLayout,
 	computed: {
 		version() {
-			return this.$store.state.version;
+			return GlobalUtility.$store.state.version;
 		}
 	}
 };

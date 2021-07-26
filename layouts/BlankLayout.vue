@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import baseLayout from './baseLayout';
+import baseLayout from '@/library_vue/layouts/baseLayout';
 
 export default {
 	name: 'BlankLayout',

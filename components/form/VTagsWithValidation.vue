@@ -24,7 +24,9 @@
 </template>
 
 <script>
-import base from '../base';
+import GlobalUtility from '@thzero/library_client/utility/global';
+
+import base from '@/library_vue/components/base';
 
 export default {
 	name: 'TagsWithValidation',
@@ -63,7 +65,7 @@ export default {
 	}),
 	computed: {
 		hint() {
-			return this.$trans.t('errors.tagLine.max', { max: this.max });
+			return GlobalUtility.$trans.t('errors.tagLine.max', { max: this.max });
 		}
 	},
 	watch: {

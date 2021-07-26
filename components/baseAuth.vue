@@ -35,46 +35,11 @@ import Vue from 'vue';
 
 import LibraryConstants from '@thzero/library_client/constants';
 
-import base from './base';
+import baseAuth from '@/library_vue/components/baseAuth';
 
 export default {
 	name: 'BaseAuth',
-	extends: base,
-	data: () => ({
-		allowRememberMe: false,
-		available: false,
-		disabled: false,
-		isLoggedIn: false,
-		rememberMe: false,
-		features: null
-	}),
-	computed: {
-		display() {
-			return !this.isLoggedIn;
-		}
-	},
-	async beforeCreate() {
-		this.features = this.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_FEATURES);
-		this.allowRememberMe = this.features && this.features.features ? this.features.features.RememberMe : false;
-		this.auth = this.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_AUTH);
-		this.available = await this.auth.isAuthenticated;
-		if (this.available)
-			this.$navRouter.push('/');
-	},
-	async mounted() {
-		await this.auth.signInCompleted();
-		Vue.prototype.$EventBus.$on('auth', isLoggedIn => {
-			this.logger.debug('BaseAuth', 'mounted', 'isLoggedIn', isLoggedIn, this.correlationId());
-			this.isLoggedIn = isLoggedIn;
-			this.disabled = isLoggedIn;
-		});
-	},
-	methods: {
-		async signInGoogle() {
-			this.disabled = true;
-			await this.auth.signIn(this.correlationId());
-		}
-	}
+	extends: baseAuth
 };
 </script>
 

@@ -48,63 +48,14 @@
 <script>
 import VueUtility from '@/library_vue/utility/index';
 
-import base from './base';
+import baseConfirmationDialog from '@/library_vue/components/baseConfirmationDialog';
 
 export default {
 	name: 'ConfirmationDialog',
-	extends: base,
-	props: {
-		completeOk: {
-			type: Function,
-			default: null
-		},
-		message: {
-			type: String,
-			default: null
-		},
-		nonRecoverable: {
-			type: Boolean,
-			default: false
-		},
-		preCompleteOk: {
-			type: Function,
-			default: null
-		},
-		signal: {
-			type: Boolean,
-			default: false
-		}
-	},
-	data: () => ({
-		dialogSignal: false,
-		internalItem: null
-	}),
-	watch: {
-		// Handles external model changes.
-		signal(value) {
-			this.dialogSignal = value;
-		}
-	},
+	extends: baseConfirmationDialog,
 	methods: {
-		dialogCancel() {
-			this.dialogSignal = false;
-			this.$emit('cancel');
-		},
-		async dialogOk() {
-			const correlationId = this.correlationId();
-			if (this.preCompleteOk) {
-				const response = await this.preCompleteOk(correlationId);
-				this.logger.debug('ConfirmationDialog', 'dialogOk', 'response', response, correlationId);
-				if (!response || !response.success) {
-					VueUtility.handleError(this.$refs.obs, this.serverErrors, response, correlationId);
-					return;
-				}
-			}
-
-			this.dialogSignal = false;
-			this.$emit('ok');
-			if (this.completeOk)
-				this.completeOk();
+		handleError(response, correlationId) {
+			VueUtility.handleError(this.$refs.obs, this.serverErrors, response, correlationId);
 		}
 	}
 };
