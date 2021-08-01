@@ -7,7 +7,7 @@ class BaseValidate {
 	}
 
 	// eslint-disable-next-line
-	async execute(Vue, app, router, store) {
+	async execute(framework) {
 		extend('decimal', {
 			validate: (value, { decimals = '*', separator = '.' } = {}) => {
 				if (value === null || value === undefined || value === '') {
@@ -63,8 +63,8 @@ class BaseValidate {
 
 		this._initialize(extend);
 
-		Vue.component('ValidationObserver', ValidationObserver);
-		Vue.component('ValidationProvider', ValidationProvider);
+		framework.component('ValidationObserver', ValidationObserver);
+		framework.component('ValidationProvider', ValidationProvider);
 	}
 
 	// eslint-disable-next-line
