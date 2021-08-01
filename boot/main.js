@@ -29,9 +29,10 @@ async function start(app, router, storeRequest, vuetify, bootFiles, starter) {
 				continue;
 
 			try {
+				const framework = Vue;
 				try {
 					await bootFile({
-						Vue,
+						framework,
 						app,
 						router,
 						store
@@ -41,7 +42,7 @@ async function start(app, router, storeRequest, vuetify, bootFiles, starter) {
 				catch (err) {
 					obj = new bootFile();
 					await obj.execute(
-						Vue,
+						framework,
 						app,
 						router,
 						store

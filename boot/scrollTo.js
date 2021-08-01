@@ -1,7 +1,7 @@
 import VueScrollTo from 'vue-scrollto';
 
 export default async ({
-	Vue
+	framework
 }) => {
-	Vue.use(VueScrollTo);
+	framework.use(VueScrollTo);
 };
