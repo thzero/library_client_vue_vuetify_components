@@ -9,6 +9,7 @@
 		<v-switch
       		v-model="innerValue"
       		:label="$attrs.label"
+			@change="change"
     	></v-switch>
 	</ValidationProvider>
 </template>
@@ -17,7 +18,7 @@
 import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
-	name: 'VSwitchWithValidation',
+	name: 'VtSwitchWithValidation',
 	extends: baseControlEdit,
 	props: {
 		rules: {
@@ -31,6 +32,10 @@ export default {
 		rulesImmediate: {
 			type: Boolean,
 			default: false
+		},
+		change: {
+			type: Function,
+			default: null
 		},
 		// must be included in props
 		value: {

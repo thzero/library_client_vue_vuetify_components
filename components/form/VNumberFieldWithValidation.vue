@@ -17,6 +17,7 @@
 			:success="valid"
 			v-bind="$attrs"
 			v-on="$listeners"
+			@blur="blur"
 		/>
 	</ValidationProvider>
 </template>
@@ -39,6 +40,10 @@ export default {
 		rulesImmediate: {
 			type: Boolean,
 			default: false
+		},
+		blur: {
+			type: Function,
+			default: null
 		},
 		// must be included in props
 		value: {

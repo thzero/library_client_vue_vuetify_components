@@ -15,6 +15,7 @@
 			:label="label"
 			item-text="name"
 			item-value="id"
+			@change="change"
 		/>
 	</ValidationProvider>
 </template>
@@ -37,6 +38,10 @@ export default {
 		rulesImmediate: {
 			type: Boolean,
 			default: false
+		},
+		change: {
+			type: Function,
+			default: null
 		},
 		items: {
 			type: [Object, Array],
