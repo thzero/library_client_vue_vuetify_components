@@ -20,7 +20,9 @@
 						</div>
 					</v-form>
 				</v-card-text>
-				<v-card-actions>
+				<v-card-actions
+					v-if="!autoSave"
+				>
 					<v-spacer />
 					<v-btn
 						v-if="buttonClear"
@@ -48,6 +50,24 @@
 						{{ $t('buttons.ok') }}
 					</v-btn>
 				</v-card-actions>
+				<v-overlay
+					absolute
+					:value="overlaySave"
+				>
+					<v-card
+        				color="primary"
+						dark
+					>
+						<v-card-text>
+							Saving...
+							<v-progress-linear
+								indeterminate
+								color="white"
+								class="mb-0"
+							></v-progress-linear>
+						</v-card-text>
+					</v-card>
+				</v-overlay>
 			</v-card>
 		</ValidationObserver>
 	</vue-fragment>
@@ -62,6 +82,10 @@ export default {
 	name: 'VtFormControl',
 	extends: baseEdit,
 	props: {
+		autoSave: {
+			type: Boolean,
+			default: false
+		},
 		buttonCancel: {
 			type: Boolean,
 			default: true
@@ -84,8 +108,14 @@ export default {
 		}
 	},
 	data: () => ({
+        isSaving: false,
 		disabled: false
 	}),
+	computed: {
+		overlaySave() {
+			return this.isSaving && this.autoSave;
+		}
+	},
 	methods: {
 		cancel() {
 			const correlationId = this.correlationId();
@@ -93,6 +123,7 @@ export default {
 			this.clear(correlationId);
 			this.logger.debug('FormControl', 'cancel', null, null, correlationId);
 			this.$emit('cancel');
+			this.isSaving = false;
 		},
 		async clear(correlationId) {
 			this.serverErrors = [];
@@ -100,7 +131,7 @@ export default {
 			this.$nextTick(async () => {
 				await this.$refs.obs.reset(correlationId);
 			});
-			this.disabled = false;
+			this.isSaving = false;
 		},
 		observer() {
 			this.$refs.obs;
@@ -113,14 +144,17 @@ export default {
 					el[0].scrollTop = 0;
 			}, 25);
 			this.resetControl(correlationId, value);
+			this.isSaving = false;
 		},
 		// eslint-disable-next-line
 		resetControl(correlationId, value) {
 		},
 		setErrors(errors) {
 			this.$refs.obs.setErrors(errors);
+			this.isSaving = false;
 		},
 		async submit() {
+			this.isSaving = true;
 			this.serverErrors = [];
 
 			const correlationId = this.correlationId();
@@ -135,6 +169,7 @@ export default {
 				this.logger.debug('FormControl', 'submit', 'response', response, correlationId);
 				if (!response || !response.success) {
 					VueUtility.handleError(this.$refs.obs, this.serverErrors, response, correlationId);
+					this.isSaving = false;
 					return;
 				}
 			}
@@ -142,6 +177,7 @@ export default {
 			this.logger.debug('FormControl', 'submit', 'ok', null, correlationId);
 			this.$emit('ok');
 			this.clear(correlationId);
+			this.isSaving = false;
 		}
 	}
 };
