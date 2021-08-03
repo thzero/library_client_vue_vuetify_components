@@ -6,6 +6,7 @@
 		:readonly="readonly"
 		v-bind="$attrs"
 		v-on="$listeners"
+		@blur="blur"
 	/>
 </template>
 
@@ -16,6 +17,10 @@ export default {
 	name: 'VtNumberField',
 	extends: baseControlEdit,
 	props: {
+		blur: {
+			type: Function,
+			default: null
+		},
 		// must be included in props
 		value: {
 			type: null,

@@ -8,6 +8,7 @@
 		:solo-inverted="soloInverted"
 		:item-text="text"
 		item-value="id"
+		@change="change"
 	/>
 </template>
 
@@ -18,6 +19,10 @@ export default {
 	name: 'VtSelect',
 	extends: baseControlEdit,
 	props: {
+		change: {
+			type: Function,
+			default: null
+		},
 		flat: {
 			type: Boolean,
 			default: false

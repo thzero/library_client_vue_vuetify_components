@@ -4,6 +4,7 @@
 		:readonly="readonly"
 		v-bind="$attrs"
 		v-on="$listeners"
+		@blur="blur"
 	/>
 </template>
 
@@ -17,6 +18,10 @@ export default {
 		// must be included in props
 		value: {
 			type: null,
+			default: null
+		},
+		blur: {
+			type: Function,
 			default: null
 		},
 		readonly: {

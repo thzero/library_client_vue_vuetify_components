@@ -14,6 +14,7 @@
 			:success="valid"
 			v-bind="$attrs"
 			v-on="$listeners"
+			@change="change"
 		/>
 	</ValidationProvider>
 </template>
@@ -36,6 +37,10 @@ export default {
 		rulesImmediate: {
 			type: Boolean,
 			default: false
+		},
+		change: {
+			type: Function,
+			default: null
 		},
 		// must be included in props
 		value: {
