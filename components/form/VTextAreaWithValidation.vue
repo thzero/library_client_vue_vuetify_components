@@ -42,7 +42,7 @@ export default {
 		},
 		blur: {
 			type: Function,
-			default: null
+			default: () => {}
 		},
 		// must be included in props
 		value: {

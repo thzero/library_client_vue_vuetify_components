@@ -41,7 +41,7 @@ export default {
 		},
 		change: {
 			type: Function,
-			default: null
+			default: () => {}
 		},
 		items: {
 			type: [Object, Array],
