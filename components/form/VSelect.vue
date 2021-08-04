@@ -21,7 +21,7 @@ export default {
 	props: {
 		change: {
 			type: Function,
-			default: null
+			default: () => {}
 		},
 		flat: {
 			type: Boolean,

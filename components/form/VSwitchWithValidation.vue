@@ -35,7 +35,7 @@ export default {
 		},
 		change: {
 			type: Function,
-			default: null
+			default: () => {}
 		},
 		// must be included in props
 		value: {

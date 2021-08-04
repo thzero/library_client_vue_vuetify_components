@@ -22,7 +22,7 @@ export default {
 		},
 		blur: {
 			type: Function,
-			default: null
+			default: () => {}
 		},
 		readonly: {
 			type: Boolean,
