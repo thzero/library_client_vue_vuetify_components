@@ -59,7 +59,7 @@
 						</v-btn>
 						<v-btn
 							v-if="buttonOk"
-							:disabled="invalid || disabled"
+							:disabled="invalid || disabled || (invalidOverride != null ? invalidOverride : false)"
 							color="green darken-1"
 							text
 							@click="submit"
@@ -114,6 +114,10 @@ export default {
 		fullscreen: {
 			type: Boolean,
 			default: false
+		},
+		invalidOverride: {
+			type: Boolean,
+			default: null
 		},
 		label: {
 			type: String,
@@ -272,6 +276,9 @@ export default {
 			this.logger.debug('FormDialog', 'submit', 'ok', null, correlationId);
 			this.$emit('ok');
 			this.clear(correlationId);
+		},
+		async validate(correlationId) {
+			return await this.$refs.obs.validate(correlationId);
 		}
 	}
 };

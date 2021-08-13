@@ -16,6 +16,7 @@
 			v-bind="$attrs"
 			v-on="$listeners"
   			@blur="blur"
+  			@input.native="change"
 		/>
 	</ValidationProvider>
 </template>
@@ -40,6 +41,10 @@ export default {
 			default: false
 		},
 		blur: {
+			type: Function,
+			default: () => {}
+		},
+		change: {
 			type: Function,
 			default: () => {}
 		},

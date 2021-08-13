@@ -9,6 +9,7 @@
 		<v-switch
       		v-model="innerValue"
       		:label="$attrs.label"
+			:disabled="disabled"
 			@change="change"
     	></v-switch>
 	</ValidationProvider>
@@ -21,6 +22,10 @@ export default {
 	name: 'VtSwitchWithValidation',
 	extends: baseControlEdit,
 	props: {
+		disabled: {
+			type: Boolean,
+			default: false
+		},
 		rules: {
 			type: [Object, String],
 			default: ''
