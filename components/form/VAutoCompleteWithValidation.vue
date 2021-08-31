@@ -24,7 +24,7 @@
 <script>
 import LibraryUtility from '@thzero/library_common/utility';
 
-import baseControlEdit from '@/library_vue/components/baseControlEdit';
+import baseControlEdit from '@/library_vue_components/components/baseControlEdit';
 
 export default {
 	name: 'VtAutoCompleteWithValidation',

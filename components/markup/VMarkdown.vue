@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import baseMarkdown from '@/library_vue/components/markup/baseMarkdown';
+import baseMarkdown from '@/library_vue_components/components/markup/baseMarkdown';
 
 export default {
 	name: 'VtMarkdown',

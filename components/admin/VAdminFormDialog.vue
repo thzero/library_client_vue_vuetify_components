@@ -1,7 +1,7 @@
 <script>
 import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
-import VueUtility from '@/library_vue/utility';
+import VueUtility from '@thzero/library_client_vue/utility';
 
 import NotImplementedError from '@thzero/library_common/errors/notImplemented';
 

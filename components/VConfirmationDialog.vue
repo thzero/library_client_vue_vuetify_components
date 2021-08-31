@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import VueUtility from '@/library_vue/utility/index';
+import VueUtility from '@thzero/library_client_vue/utility/index';
 
-import baseConfirmationDialog from '@/library_vue/components/baseConfirmationDialog';
+import baseConfirmationDialog from '@/library_vue_components/components/baseConfirmationDialog';
 
 export default {
 	name: 'VtConfirmationDialog',

@@ -27,7 +27,7 @@
 <script>
 import VDateTimeField from './VDateTimeField';
 
-import base from '@/library_vue/components/base';
+import base from '@/library_vue_components/components/base';
 
 export default {
 	name: 'VtDateTimePickerWithValidation',
