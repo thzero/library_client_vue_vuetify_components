@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import baseDisplayDialog from '@/library_vue/components/baseDisplayDialog';
+import baseDisplayDialog from '@/library_vue_components/components/baseDisplayDialog';
 
 export default {
 	name: 'VtDisplayDialog',

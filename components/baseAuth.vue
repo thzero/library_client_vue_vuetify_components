@@ -35,7 +35,7 @@ import Vue from 'vue';
 
 import LibraryConstants from '@thzero/library_client/constants';
 
-import baseAuth from '@/library_vue/components/baseAuth';
+import baseAuth from '@/library_vue_components/components/baseAuth';
 
 export default {
 	name: 'BaseAuth',

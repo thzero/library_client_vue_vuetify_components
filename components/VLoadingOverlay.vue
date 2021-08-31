@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import VueUtility from '@/library_vue/utility';
+import VueUtility from '@thzero/library_client_vue/utility';
 
 export default {
 	name: 'VtLoadingOverlay',
