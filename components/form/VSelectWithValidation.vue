@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import baseControlEdit from '@/library_vue_components/components/baseControlEdit';
+import baseControlEdit from '@/library_vue/components/baseControlEdit';
 
 export default {
 	name: 'VtSelectWithValidation',

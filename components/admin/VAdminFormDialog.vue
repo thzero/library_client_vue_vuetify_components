@@ -1,7 +1,6 @@
 <script>
 import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
-import VueUtility from '@thzero/library_client_vue/utility';
 
 import NotImplementedError from '@thzero/library_common/errors/notImplemented';
 
@@ -95,7 +94,7 @@ export default {
 		},
 		async resetDialog(correlationId, value) {
 			// forces random key gen so that the editor gets reset for each new item
-			this.randomKey = VueUtility.randomKeyGen();
+			this.randomKey = LibraryUtility.randomKeyGen();
 			if (value) {
 				const temp = this.clone(value);
 				temp.timestamp = temp.timestamp ? LibraryUtility.convertTimestampToLocal(temp.timestamp).valueOf() : LibraryUtility.getTimestampLocal().valueOf();

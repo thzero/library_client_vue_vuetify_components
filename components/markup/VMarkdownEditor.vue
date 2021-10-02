@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import baseMarkdownEditor from '@/library_vue_components/components/markup/baseMarkdownEditor';
+import baseMarkdownEditor from '@/library_vue/components/markup/baseMarkdownEditor';
 import VTextAreaWithValidation from '../form/VTextAreaWithValidation';
 
 export default {

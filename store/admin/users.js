@@ -2,7 +2,6 @@ import LibraryConstants from '@thzero/library_client/constants';
 
 import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
-import VueUtility from '../../utility/index';
 
 import Response from '@thzero/library_common/response';
 
@@ -15,7 +14,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_USERS);
 			const response = await service.delete(params.correlationId, params.id);
 			this.$logger.debug('store.admin.users', 'deleteAdminUser', 'response', response);
-			if (Response.hasSucceeded(response)) {
+			if (Response.hasSucceeeded(response)) {
 				commit('deleteAdminUser', { correlationId: params.correlationId, id: params.id });
 				GlobalUtility.$store.dispatcher.users.delete(params.correlationId, params.id);
 			}
@@ -31,7 +30,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_USERS);
 			const response = await service.update(params.correlationId, params.item);
 			this.$logger.debug('store.admin.users', 'updateAdminUser', 'response', response);
-			if (Response.hasSucceeded(response))
+			if (Response.hasSucceeeded(response))
 				commit('setAdminUsers', { correlationId: params.correlationId, item: response.results });
 			return response;
 		}
@@ -43,7 +42,7 @@ const store = {
 		setAdminUsers(state, params) {
 			this.$logger.debug('store.admin.users', 'setAdminUsers', 'items.a', params.item, params.correlationId);
 			this.$logger.debug('store.admin.users', 'setAdminUsers', 'items.b', state.users, params.correlationId);
-			state.users = VueUtility.updateArrayById(state.users, params.item);
+			state.users = LibraryUtility.updateArrayByObject(state.users, params.item);
 			this.$logger.debug('store.admin.users', 'setAdminUsers', 'items.c', state.users, params.correlationId);
 		},
 		setAdminUsersListing(state, params) {

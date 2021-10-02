@@ -27,7 +27,7 @@
 <script>
 import GlobalUtility from '@thzero/library_client/utility/global';
 
-import baseLayout from '@/library_vue_components/layouts/baseLayout';
+import baseLayout from '@/library_vue/layouts/baseLayout';
 
 import VVersion from '@/library_vue_vuetify/components/VVersion';
 

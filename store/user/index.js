@@ -3,8 +3,6 @@ import LibraryConstants from '@thzero/library_client/constants';
 import GlobalUtility from '@thzero/library_client/utility/global';
 import VueUtility from '../../utility/index';
 
-import Response from '@thzero/library_common/response';
-
 const store = {
 	state: {
 		authCompleted: false,
@@ -26,7 +24,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_USER);
 			const response = await service.refreshSettings(correlationId, this.state.user.user);
 			this.$logger.debug('store.user', 'refreshUserSettings', 'response', response);
-			if (Response.hasSucceeded(response) && response.results)
+			if (Response.hasSucceeeded(response) && response.results)
 				commit('setUserSettings', { correlationId: correlationId, user: response.results });
 			return response;
 		},
@@ -47,7 +45,7 @@ const store = {
 			params.settings = VueUtility.settings().mergeUser(params.correlationId, params.settings);
 			const response = await service.updateSettings(params.correlationId, this.state.user.user, params.settings);
 			this.$logger.debug('store.user', 'setUserSettings', 'response', response);
-			if (Response.hasSucceeded(response) && response.results)
+			if (Response.hasSucceeeded(response) && response.results)
 				commit('setUserSettings', { correlationId: params.correlationId, user: response.results });
 			return response;
 		},

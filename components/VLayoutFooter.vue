@@ -26,7 +26,7 @@
 import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
 
-import base from '@/library_vue_components/components/base';
+import base from '@/library_vue/components/base';
 import VVersion from './VVersion';
 
 export default {

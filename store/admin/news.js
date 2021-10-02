@@ -2,7 +2,6 @@ import LibraryConstants from '@thzero/library_client/constants';
 
 import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
-import VueUtility from '../../utility/index';
 
 import Response from '@thzero/library_common/response';
 
@@ -15,7 +14,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_NEWS);
 			const response = await service.create(params.correlationId, params.item);
 			this.$logger.debug('store.admin.news', 'createAdminNews', 'response', response);
-			if (Response.hasSucceeded(response))
+			if (Response.hasSucceeeded(response))
 				commit('setAdminNews', { correlationId: params.correlationId, item: response.success && response.results ? response.results : null });
 			return response;
 		},
@@ -23,7 +22,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_NEWS);
 			const response = await service.delete(params.correlationId, params.id);
 			this.$logger.debug('store.admin.news', 'deleteAdminNews', 'response', response);
-			if (Response.hasSucceeded(response)) {
+			if (Response.hasSucceeeded(response)) {
 				commit('deleteAdminNews', params);
 				GlobalUtility.$store.dispatcher.news.delete(params.correlationId, params.id);
 			}
@@ -39,7 +38,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_NEWS);
 			const response = await service.update(params.correlationId, params.item);
 			this.$logger.debug('store.admin.news', 'updateAdminNews', 'response', response);
-			if (Response.hasSucceeded(response))
+			if (Response.hasSucceeeded(response))
 				commit('setAdminNews', { correlationId: params.correlationId, item: response.success && response.results ? response.results : null });
 			return response;
 		}
@@ -51,7 +50,7 @@ const store = {
 		setAdminNews(state, params) {
 			this.$logger.debug('store.admin.news', 'setAdminNews', 'items.a', params.item, params.correlationId);
 			this.$logger.debug('store.admin.news', 'setAdminNews', 'items.b', state.news, params.correlationId);
-			state.news = VueUtility.updateArrayById(state.news, params.item);
+			state.news = LibraryUtility.updateArrayByObject(state.news, params.item);
 			this.$logger.debug('store.admin.news', 'setAdminNews', 'items.c', state.news, params.correlationId);
 		},
 		setAdminNewsListing(state, params) {
