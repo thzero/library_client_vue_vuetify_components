@@ -15,7 +15,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_NEWS);
 			const response = await service.latest(correlationId);
 			this.$logger.debug('store.news', 'getLatestNews', 'response', response);
-			commit('setLatestNews', { correlationId: correlationId, latest: response.success && response.results ? response.results.data : null });
+			commit('setLatestNews', { correlationId: correlationId, latest: response.results ? response.results.data : null });
 		}
 	},
 	mutations: {
