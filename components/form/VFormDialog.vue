@@ -83,10 +83,10 @@
 <script>
 import VueUtility from '@thzero/library_client_vue/utility/index';
 
-import baseEdit from '@/library_vue_components/components/baseEdit';
+import baseEdit from '@/library_vue/components/baseEdit';
 import VConfirmationDialog from '../VConfirmationDialog';
 
-import DialogSupport from '@/library_vue_components/components/support/dialog';
+import DialogSupport from '@/library_vue/components/support/dialog';
 
 export default {
 	name: 'VtFormDialog',

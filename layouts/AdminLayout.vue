@@ -124,13 +124,13 @@ import LibraryConstants from '@thzero/library_client/constants';
 
 import GlobalUtility from '@thzero/library_client/utility/global';
 
-import baseLayout from '@/library_vue_components/layouts/baseLayout';
+import baseLayout from '@/library_vue/layouts/baseLayout';
 
 import VConfirmationDialog from '@/library_vue_vuetify/components/VConfirmationDialog';
 import VLayoutFooter from '@/library_vue_vuetify/components/VLayoutFooter';
 import VLoadingOverlay from '@/library_vue_vuetify/components/VLoadingOverlay';
 
-import DialogSupport from '@/library_vue_components/components/support/dialog';
+import DialogSupport from '@/library_vue/components/support/dialog';
 
 const auth = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_AUTH);
 

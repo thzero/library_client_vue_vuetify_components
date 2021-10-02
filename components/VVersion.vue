@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import base from '@/library_vue_components/components/base';
+import base from '@/library_vue/components/base';
 
 export default {
 	name: 'Version',

@@ -76,7 +76,7 @@
 <script>
 import VueUtility from '@thzero/library_client_vue/utility/index';
 
-import baseEdit from '@/library_vue_components/components/baseEdit';
+import baseEdit from '@/library_vue/components/baseEdit';
 
 export default {
 	name: 'VtFormControl',
