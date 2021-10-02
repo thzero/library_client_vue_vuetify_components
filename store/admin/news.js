@@ -15,7 +15,7 @@ const store = {
 			const response = await service.create(params.correlationId, params.item);
 			this.$logger.debug('store.admin.news', 'createAdminNews', 'response', response);
 			if (Response.hasSucceeeded(response))
-				commit('setAdminNews', { correlationId: params.correlationId, item: response.success && response.results ? response.results : null });
+				commit('setAdminNews', { correlationId: params.correlationId, item: response.results ? response.results : null });
 			return response;
 		},
 		async deleteAdminNews({ commit }, params) {
@@ -32,14 +32,14 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_NEWS);
 			const response = await service.search(params.correlationId, params.params);
 			this.$logger.debug('store.admin.news', 'searchAdminNews', 'response', response);
-			commit('setAdminNewsListing', { correlationId: params.correlationId, list: response.success && response.results ? response.results.data : null });
+			commit('setAdminNewsListing', { correlationId: params.correlationId, list: response.results ? response.results.data : null });
 		},
 		async updateAdminNews({ commit }, params) {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_NEWS);
 			const response = await service.update(params.correlationId, params.item);
 			this.$logger.debug('store.admin.news', 'updateAdminNews', 'response', response);
 			if (Response.hasSucceeeded(response))
-				commit('setAdminNews', { correlationId: params.correlationId, item: response.success && response.results ? response.results : null });
+				commit('setAdminNews', { correlationId: params.correlationId, item: response.results ? response.results : null });
 			return response;
 		}
 	},
