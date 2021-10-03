@@ -24,9 +24,7 @@ const store = {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_USERS);
 			const response = await service.search(params.correlationId, params.params);
 			this.$logger.debug('store.admin.users', 'searchAdminUsers', 'response', response);
-			if (Response.hasSucceeeded(response))
-				commit('setAdminUsersListing', { correlationId: params.correlationId, list: response.results ? response.results.data : null });
-			return response;
+			commit('setAdminUsersListing', { correlationId: params.correlationId, list: response.success && response.results ? response.results.data : null });
 		},
 		async updateAdminUser({ commit }, params) {
 			const service = GlobalUtility.$injector.getService(LibraryConstants.InjectorKeys.SERVICE_ADMIN_USERS);
