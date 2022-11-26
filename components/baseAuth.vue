@@ -31,14 +31,10 @@
 </template>
 
 <script>
-import Vue from 'vue';
-
-import LibraryConstants from '@thzero/library_client/constants';
-
 import baseAuth from '@/library_vue/components/baseAuth';
 
 export default {
-	name: 'BaseAuth',
+	name: 'VtBaseAuth',
 	extends: baseAuth
 };
 </script>

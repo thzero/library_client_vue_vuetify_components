@@ -8,7 +8,7 @@
 import base from '@/library_vue/components/base';
 
 export default {
-	name: 'Version',
+	name: 'VtVersion',
 	extends: base,
 	props: {
 		value: {
