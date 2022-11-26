@@ -10,7 +10,7 @@ import VFormControl from '@/library_vue_vuetify/components/form/VFormControl';
 import VTextFieldWithValidation from '@/library_vue_vuetify/components/form/VTextFieldWithValidation';
 
 export default {
-	name: 'BaseSettings',
+	name: 'VtBaseSettings',
 	components: {
 		VConfirmationDialog,
 		VFormControl,
@@ -68,12 +68,12 @@ export default {
 			await this.preCompleteI(correlationId, responses);
 
 			const response = Response.success(correlationId);
-			for (let item of responses)
+			for (const item of responses)
 				response.success &= item.success;
 			return response;
 		},
 		reset(correlationId) {
-			let self = this;
+			const self = this;
 			setTimeout(() => {
 				self.resetI(correlationId);
 			},

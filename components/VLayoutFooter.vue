@@ -5,14 +5,7 @@
 	>
 		<VVersion v-model="version" />
 		<v-spacer />
-		© 2020
-		<a
-			class="ml-1"
-			target="_blank"
-			href="https://thzero.com"
-		>
-			thZero.com
-		</a>
+		<VCopyright v-model="version" />
 		<span
 			v-if="isDev"
 			style="padding-left: 4px;"
@@ -27,11 +20,13 @@ import GlobalUtility from '@thzero/library_client/utility/global';
 import LibraryUtility from '@thzero/library_common/utility';
 
 import base from '@/library_vue/components/base';
+import VCopyright from './VCopyright';
 import VVersion from './VVersion';
 
 export default {
 	name: 'VtLayoutFooter',
 	components: {
+		VCopyright,
 		VVersion
 	},
 	extends: base,
